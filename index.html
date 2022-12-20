@@ -8,6 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width height=device-height">
     <script>window.onload = () => console.clear()</script>
+    <script>
+        window.onload = () => {
+    setInterval(() =>{
+        fetch("https://zenoplay.zenomedia.com/api/zenofm/nowplaying/iuktcl7nxuptv?_=1671557944773").then(r => r.json()).then(got =>{
+            document.getElementByID("title").textContent = got.title.replace(".mp3", "")
+        })
+    }, 50000)
+        }
+    </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6061519007273779" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZHZHRNSTE"></script>
 <script>
@@ -84,6 +93,7 @@ body {
         <audio id="player" controls autoplay>
   <source src="http://stream.zeno.fm/zyekbtgeascuv" type="audio/mp3"/>
 </audio>
+        <h1 id="title"></h1>
     </div>
 </body>
 </html>
